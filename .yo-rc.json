@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.carlogistics.articles",
+      "nativeLanguage": "de"
+    },
+    "jhipsterVersion": "5.3.4",
+    "applicationType": "monolith",
+    "baseName": "articles",
+    "packageName": "com.carlogistics.articles",
+    "packageFolder": "com/carlogistics/articles",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODFlMTRmNmQxYjZiY2Y1OTg0OTUyOGU1OTA5MmFjZTNiZjVkMGFmYzBmYzAwNzNiNjVhYzk4ZGNjOGM5NmUyMzM2MGRkOTM4YWE5MWEzMDAyYWI3MzMyNGQ3NWIzYjhjNDcxZGU5ZGQ1MmYzYzA3YmE5OWI5ZDU0MmE1YjExOGM=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "de",
+    "languages": [
+      "de",
+      "en",
+      "es"
+    ]
+  }
+}

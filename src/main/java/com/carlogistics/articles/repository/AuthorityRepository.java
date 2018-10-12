@@ -1,0 +1,11 @@
+package com.carlogistics.articles.repository;
+
+import com.carlogistics.articles.domain.Authority;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * Spring Data JPA repository for the Authority entity.
+ */
+public interface AuthorityRepository extends JpaRepository<Authority, String> {
+}
