@@ -2,6 +2,8 @@
 
 Dieses Repository Enthält die Unterlagen zum Goldschmiede Vortrag am 12.10.18
 
+Die Folien finden sich [hier](Goldschmiede%20JHipster.pdf)
+
 ---
 
 # articles
