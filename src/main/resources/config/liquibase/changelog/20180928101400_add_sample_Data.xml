@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20180928101400" author="jhipster">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/categories.csv"
+                  separator=";"
+                  tableName="kategorie">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/tags.csv"
+                  separator=";"
+                  tableName="tag">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/items.csv"
+                  separator=";"
+                  tableName="artikel">
+            <column name="eingestellt_am" type="date"/>
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/items_tags.csv"
+                  separator=";"
+                  tableName="artikel_tags">
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

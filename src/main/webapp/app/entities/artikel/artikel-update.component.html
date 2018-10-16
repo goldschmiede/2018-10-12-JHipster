@@ -1,0 +1,113 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-artikel-heading" jhiTranslate="articlesApp.artikel.home.createOrEditLabel">Create or edit a Artikel</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!artikel.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="artikel.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.artikelnummer" for="field_artikelnummer">Artikelnummer</label>
+                    <input type="text" class="form-control" name="artikelnummer" id="field_artikelnummer"
+                        [(ngModel)]="artikel.artikelnummer" required/>
+                    <div [hidden]="!(editForm.controls.artikelnummer?.dirty && editForm.controls.artikelnummer?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.artikelnummer?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.beschreibung" for="field_beschreibung">Beschreibung</label>
+                    <input type="text" class="form-control" name="beschreibung" id="field_beschreibung"
+                        [(ngModel)]="artikel.beschreibung" minlength="20"/>
+                    <div [hidden]="!(editForm.controls.beschreibung?.dirty && editForm.controls.beschreibung?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.beschreibung?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 20 }">
+                        This field is required to be at least 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.titel" for="field_titel">Titel</label>
+                    <input type="text" class="form-control" name="titel" id="field_titel"
+                        [(ngModel)]="artikel.titel" minlength="3" maxlength="200"/>
+                    <div [hidden]="!(editForm.controls.titel?.dirty && editForm.controls.titel?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titel?.errors?.minlength" jhiTranslate="entity.validation.minlength" translateValues="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titel?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.preis" for="field_preis">Preis</label>
+                    <input type="number" class="form-control" name="preis" id="field_preis"
+                        [(ngModel)]="artikel.preis" required/>
+                    <div [hidden]="!(editForm.controls.preis?.dirty && editForm.controls.preis?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.preis?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.preis?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.eingestelltAm" for="field_eingestelltAm">Eingestellt Am</label>
+                    <div class="input-group">
+                        <input id="field_eingestelltAm" type="text" class="form-control" name="eingestelltAm" ngbDatepicker  #eingestelltAmDp="ngbDatepicker" [(ngModel)]="artikel.eingestelltAm"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="eingestelltAmDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.verfuegbarkeit" for="field_verfuegbarkeit">Verfuegbarkeit</label>
+                    <select class="form-control" name="verfuegbarkeit" [(ngModel)]="artikel.verfuegbarkeit" id="field_verfuegbarkeit"  required>
+                        <option value="VORRAETIG">{{'articlesApp.Verfuegbarkeit.VORRAETIG' | translate}}</option>
+                        <option value="AUSVERKAUFT">{{'articlesApp.Verfuegbarkeit.AUSVERKAUFT' | translate}}</option>
+                        <option value="BESTELLT">{{'articlesApp.Verfuegbarkeit.BESTELLT' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.verfuegbarkeit?.dirty && editForm.controls.verfuegbarkeit?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.verfuegbarkeit?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="articlesApp.artikel.kategorie" for="field_kategorie">Kategorie</label>
+                    <select class="form-control" id="field_kategorie" name="kategorie" [(ngModel)]="artikel.kategorieId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="kategorieOption.id" *ngFor="let kategorieOption of kategories; trackBy: trackKategorieById">{{kategorieOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="articlesApp.artikel.tags" for="field_tags">Tags</label>
+                    <select class="form-control" id="field_tags" multiple name="tags" [(ngModel)]="artikel.tags">
+                        <option [ngValue]="getSelected(artikel.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

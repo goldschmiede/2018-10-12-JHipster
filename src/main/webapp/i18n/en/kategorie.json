@@ -1,0 +1,27 @@
+
+{
+    "articlesApp": {
+        "kategorie" : {
+            "home": {
+                "title": "Kategories",
+                "createLabel": "Create a new Kategorie",
+                "createOrEditLabel": "Create or edit a Kategorie",
+                "search": "Search for Kategorie"
+            },
+            "created": "A new Kategorie is created with identifier {{ param }}",
+            "updated": "A Kategorie is updated with identifier {{ param }}",
+            "deleted": "A Kategorie is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Kategorie {{ id }}?"
+            },
+            "detail": {
+                "title": "Kategorie"
+            },
+            "beschreibung": "Beschreibung",
+            "titel": "Titel",
+            "ueberkategorie": "Ueberkategorie",
+            "artikel": "Artikel",
+            "unterkategorien": "Unterkategorien"
+        }
+    }
+}

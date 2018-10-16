@@ -38,6 +38,13 @@ public class CacheConfiguration {
             cm.createCache(com.carlogistics.articles.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.carlogistics.articles.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.carlogistics.articles.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Artikel.class.getName(), jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Artikel.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Kategorie.class.getName(), jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Kategorie.class.getName() + ".artikels", jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Kategorie.class.getName() + ".unterkategoriens", jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Tag.class.getName(), jcacheConfiguration);
+            cm.createCache(com.carlogistics.articles.domain.Tag.class.getName() + ".artikels", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

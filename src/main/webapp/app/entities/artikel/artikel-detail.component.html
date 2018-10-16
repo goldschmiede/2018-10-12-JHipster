@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="artikel">
+            <h2>{{artikel.titel}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="articlesApp.artikel.artikelnummer">Artikelnummer</span></dt>
+                <dd>
+                    <span>{{artikel.artikelnummer}}</span>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.beschreibung">Beschreibung</span></dt>
+                <dd>
+                    <span>{{artikel.beschreibung}}</span>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.titel">Titel</span></dt>
+                <dd>
+                    <span>{{artikel.titel}}</span>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.preis">Preis</span></dt>
+                <dd>
+                    <span>{{artikel.preis | currency:'EUR'}}</span>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.eingestelltAm">Eingestellt Am</span></dt>
+                <dd>
+                    <span>{{artikel.eingestelltAm | date}}</span>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.verfuegbarkeit">Verfuegbarkeit</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'articlesApp.Verfuegbarkeit.' + artikel.verfuegbarkeit}}">{{artikel.verfuegbarkeit}}</span>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.kategorie">Kategorie</span></dt>
+                <dd>
+                    <div *ngIf="artikel.kategorieId">
+                        <a [routerLink]="['/kategorie', artikel.kategorieId, 'view']">{{artikel.kategorieTitel}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="articlesApp.artikel.tags">Tags</span></dt>
+                <dd>
+                    <span *ngFor="let tags of artikel.tags; let last = last">
+                        <a class="badge badge-info"[routerLink]="['/tag', tags?.id, 'view' ]">{{tags.titel}}</a>
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/artikel', artikel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

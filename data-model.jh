@@ -1,0 +1,39 @@
+entity Artikel {
+ artikelnummer String required,
+ beschreibung String minlength(20),
+ titel String minlength(3) maxlength(200),
+ preis Double required,
+ eingestelltAm LocalDate,
+ verfuegbarkeit Verfuegbarkeit required
+}
+
+enum Verfuegbarkeit {
+	VORRAETIG, AUSVERKAUFT, BESTELLT
+}
+
+entity Kategorie {
+	beschreibung String,
+    titel String minlength(3)
+    
+}
+
+entity Tag {
+	beschreibung String,
+    titel String minlength(3)
+}
+
+relationship ManyToMany {
+	Artikel{tags} to Tag{artikel}    
+}
+
+relationship ManyToOne {
+	Artikel{kategorie} to Kategorie{artikel}
+    Kategorie{ueberkategorie} to Kategorie{unterkategorien}
+}
+
+search Artikel with elasticsearch
+paginate Artikel with pagination
+dto * with mapstruct
+service * with serviceClass
+filter Kategorie
+

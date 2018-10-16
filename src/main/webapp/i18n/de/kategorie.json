@@ -1,0 +1,27 @@
+
+{
+    "articlesApp": {
+        "kategorie" : {
+            "home": {
+                "title": "Kategories",
+                "createLabel": "Kategorie erstellen",
+                "createOrEditLabel": "Kategorie erstellen oder bearbeiten",
+                "search": "Suche nach Kategorie"
+            },
+            "created": "Kategorie erstellt mit ID {{ param }}",
+            "updated": "Kategorie aktualisiert mit ID {{ param }}",
+            "deleted": "Kategorie gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Kategorie {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Kategorie"
+            },
+            "beschreibung": "Beschreibung",
+            "titel": "Titel",
+            "ueberkategorie": "Ueberkategorie",
+            "artikel": "Artikel",
+            "unterkategorien": "Unterkategorien"
+        }
+    }
+}

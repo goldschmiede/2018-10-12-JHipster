@@ -1,0 +1,10 @@
+{
+    "articlesApp": {
+        "Verfuegbarkeit" : {
+            "null": "",
+            "VORRAETIG": "VORRAETIG",
+            "AUSVERKAUFT": "AUSVERKAUFT",
+            "BESTELLT": "BESTELLT"
+        }
+    }
+}

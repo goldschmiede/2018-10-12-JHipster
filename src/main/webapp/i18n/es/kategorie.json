@@ -1,0 +1,27 @@
+
+{
+    "articlesApp": {
+        "kategorie" : {
+            "home": {
+                "title": "Kategories",
+                "createLabel": "Crear nuevo Kategorie",
+                "createOrEditLabel": "Crear o editar Kategorie",
+                "search": "Search for Kategorie"
+            },
+            "created": "Un nuevo Kategorie ha sido creado con el identificador {{ param }}",
+            "updated": "Un Kategorie ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Kategorie ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Kategorie {{ id }}?"
+            },
+            "detail": {
+                "title": "Kategorie"
+            },
+            "beschreibung": "Beschreibung",
+            "titel": "Titel",
+            "ueberkategorie": "Ueberkategorie",
+            "artikel": "Artikel",
+            "unterkategorien": "Unterkategorien"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+{
+    "articlesApp": {
+        "artikel" : {
+            "home": {
+                "title": "Artikels",
+                "createLabel": "Artikel erstellen",
+                "createOrEditLabel": "Artikel erstellen oder bearbeiten",
+                "search": "Suche nach Artikel"
+            },
+            "created": "Artikel erstellt mit ID {{ param }}",
+            "updated": "Artikel aktualisiert mit ID {{ param }}",
+            "deleted": "Artikel gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Artikel {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Artikel"
+            },
+            "artikelnummer": "Artikelnummer",
+            "beschreibung": "Beschreibung",
+            "titel": "Titel",
+            "preis": "Preis",
+            "eingestelltAm": "Eingestellt Am",
+            "verfuegbarkeit": "Verfuegbarkeit",
+            "kategorie": "Kategorie",
+            "tags": "Tags"
+        }
+    }
+}

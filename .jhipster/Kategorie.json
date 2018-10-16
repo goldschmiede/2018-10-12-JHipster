@@ -1,0 +1,46 @@
+{
+    "name": "Kategorie",
+    "fields": [
+        {
+            "fieldName": "beschreibung",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titel",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": 3
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ueberkategorie",
+            "otherEntityName": "kategorie",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "artikel",
+            "otherEntityName": "artikel",
+            "otherEntityRelationshipName": "kategorie"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "unterkategorien",
+            "otherEntityName": "kategorie",
+            "otherEntityRelationshipName": "ueberkategorie"
+        }
+    ],
+    "changelogDate": "20181012163700",
+    "entityTableName": "kategorie",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,6 @@
+id;artikelnummer;beschreibung;titel;preis;eingestellt_am;verfuegbarkeit;kategorie_id
+1;000001;Leckerer Schokokeks;Keks- Schoko;1.5;2018-09-28;VORRAETIG;1
+2;000002;Bananen aus Biologischem Anbau;Bananen 6 Stck;2.59;2018-09-28;VORRAETIG;1
+3;000003;Hochwertiger Kugelschreiber aus Edelstahl;Kugelschreiber Metall;8.99;2018-09-28;VORRAETIG;2
+4;000004;Chlorfrei gebleicht, FSC zertifiziert;DIN A4 Papier 500 Blatt;5.99;2018-09-28;VORRAETIG;2
+5;000005;Kölsch aus dem Herzen des Rheinlands;Kölsch 24 x 0.33l;13.33;2018-09-28;VORRAETIG;1
